@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/beranda">
+
+    <fragment
+        android:id="@+id/beranda"
+        android:name="com.example.healthylife.Beranda"
+        android:label="fragment_beranda"
+        tools:layout="@layout/fragment_beranda" />
+    <fragment
+        android:id="@+id/berita"
+        android:name="com.example.healthylife.Berita"
+        android:label="fragment_berita"
+        tools:layout="@layout/fragment_berita" />
+    <fragment
+        android:id="@+id/notifikasi"
+        android:name="com.example.healthylife.notifikasi"
+        android:label="fragment_notifikasi"
+        tools:layout="@layout/fragment_notifikasi" />
+    <fragment
+        android:id="@+id/profil"
+        android:name="com.example.healthylife.Profil"
+        android:label="fragment_profil"
+        tools:layout="@layout/fragment_profil" />
+    <fragment
+        android:id="@+id/kaloriNutrisi"
+        android:name="com.example.healthylife.KaloriNutrisi"
+        android:label="fragment_kalori_nutrisi"
+        tools:layout="@layout/fragment_kalori_nutrisi" />
+    <fragment
+        android:id="@+id/olahraga"
+        android:name="com.example.healthylife.olahraga"
+        android:label="fragment_olahraga"
+        tools:layout="@layout/fragment_olahraga" />
+</navigation>
