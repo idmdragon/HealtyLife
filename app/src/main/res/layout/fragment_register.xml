@@ -3,10 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="registerViewModel"
+            type="com.example.healthylife.ui.auth.register.RegisterViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SignUpFragment">
+        tools:context=".ui.auth.register.RegisterFragment">
 
         <TextView
             android:id="@+id/textView2"
@@ -41,9 +48,11 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:backgroundTint="#FFFFFF"
                 android:layout_height="match_parent"
-                android:hint="Password" />
+                android:backgroundTint="#FFFFFF"
+                android:hint="Password"
+                android:text="@={registerViewModel.password}" />
+
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,7 +74,7 @@
                 android:layout_height="match_parent"
                 android:backgroundTint="#FFFFFF"
                 android:hint="Nama Pengguna"
-
+                android:text="@={registerViewModel.name}"
                 app:startIconTint="#71D23E" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -87,9 +96,10 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="Email"
                 android:backgroundTint="#FFFFFF"
+                android:hint="Email"
                 android:inputType="textEmailAddress"
+                android:text="@={registerViewModel.email}"
                 app:startIconTint="#71D23E" />
         </com.google.android.material.textfield.TextInputLayout>
 
