@@ -1,45 +1,47 @@
-package com.example.healthylife.ui.auth.login
+package com.example.healthylife.ui.auth.register
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import com.example.healthylife.utils.Constants
+import com.example.healthylife.model.User
 import com.example.healthylife.utils.CustomException
 import com.example.healthylife.utils.viewobject.Resource
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreException
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.tasks.await
 
-class LoginViewModel {
+class RegisterViewModel : ViewModel() {
 
+    var name: MutableLiveData<String> = MutableLiveData()
     var email: MutableLiveData<String> = MutableLiveData()
     var password: MutableLiveData<String> = MutableLiveData()
 
     private val mAuth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
 
+    private val mRef: FirebaseFirestore by lazy { FirebaseFirestore.getInstance() }
+
     lateinit var result: LiveData<Resource<AuthResult?>>
 
-    fun loginWithEmailAndPassword() {
+    fun registerWithEmailAndPassword() {
         result = liveData(Dispatchers.IO) {
             try {
                 emit(Resource.Loading())
-                Log.d("LoginDebug", "${email.value} | ${password.value}")
                 if (email.value.isNullOrEmpty() || password.value.isNullOrEmpty()) {
                     emit(Resource.Failure(CustomException("Email or Password can't be blank")))
                 } else {
-                    Log.d(
-                        "LoginDebug",
-                        "Email and pass not empty ${email.value} | ${password.value}"
-                    )
-                    val loginAuthResult: Resource<AuthResult?> = loginWithEmailAndPassword(
+                    val registerAuthResult: Resource<AuthResult?> = registerWithEmailAndPassword(
+                        name = name.value!!,
                         email = email.value!!,
                         password = password.value!!
                     )
-                    emit(loginAuthResult)
+                    emit(registerAuthResult)
 
                 }
             } catch (e: FirebaseAuthException) {
@@ -48,14 +50,18 @@ class LoginViewModel {
         }
     }
 
-    suspend fun loginWithEmailAndPassword(
+
+    private suspend fun registerWithEmailAndPassword(
+        name: String,
         email: String,
         password: String
     ): Resource<AuthResult?> {
         return try {
             val data = mAuth
-                .signInWithEmailAndPassword(email, password)
+                .createUserWithEmailAndPassword(email, password)
                 .await()
+
+            insertUserData(name, email)
 
             Resource.Success(data)
         } catch (e: FirebaseAuthException) {
@@ -63,6 +69,15 @@ class LoginViewModel {
         }
     }
 
+    private fun insertUserData(name: String, email: String) {
+        val userId = FirebaseAuth.getInstance().currentUser?.uid
+        val userRef: DocumentReference = mRef.collection("users").document(userId.toString())
+        val userModel = User(name, email)
+        return try {
+            val data = userRef.set(userModel)
+        } catch (e: FirebaseFirestoreException) {
+
+        }
+    }
+
 }
-
-
