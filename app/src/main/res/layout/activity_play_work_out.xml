@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.PlayWorkOutActivity">
+    <TextView
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:text="Sit Up"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="18sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:text="lorem ipsum dolor sir amet"/>
+
+    <ImageView
+        android:layout_width="282dp"
+        android:layout_height="298dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_frame_3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="30dp"
+        android:textColor="#000000"
+        android:textStyle="bold
+"
+        android:layout_height="wrap_content"
+        android:textSize="80sp"
+        android:text="00:00"/>
+
+    <Button
+        android:layout_width="219dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="30dp"
+        android:text="Selanjutnya"
+
+        android:textAllCaps="false"
+        android:textSize="25sp"/>
+
+
+</LinearLayout>

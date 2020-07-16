@@ -3,14 +3,11 @@ package com.example.healthylife.ui.splash
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import androidx.lifecycle.Observer
-import com.example.healthylife.AuthActivity
-import com.example.healthylife.utils.Constants
+import com.example.healthylife.ui.AuthActivity
 import com.example.healthylife.R
 import com.example.healthylife.utils.viewobject.Resource
-import kotlinx.coroutines.GlobalScope
 
 class SplashScreen : AppCompatActivity() {
 

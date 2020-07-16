@@ -1,7 +1,8 @@
-package com.example.healthylife
+package com.example.healthylife.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.healthylife.R
 
 class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

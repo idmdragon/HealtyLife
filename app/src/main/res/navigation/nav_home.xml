@@ -7,32 +7,32 @@
 
     <fragment
         android:id="@+id/beranda"
-        android:name="com.example.healthylife.Beranda"
+        android:name="com.example.healthylife.ui.Beranda.BerandaFragment"
         android:label="fragment_beranda"
         tools:layout="@layout/fragment_beranda" />
     <fragment
         android:id="@+id/berita"
-        android:name="com.example.healthylife.Berita"
+        android:name="com.example.healthylife.ui.BeritaFragment"
         android:label="fragment_berita"
         tools:layout="@layout/fragment_berita" />
     <fragment
         android:id="@+id/notifikasi"
-        android:name="com.example.healthylife.notifikasi"
+        android:name="com.example.healthylife.ui.NotifikasiFragment"
         android:label="fragment_notifikasi"
         tools:layout="@layout/fragment_notifikasi" />
     <fragment
         android:id="@+id/profil"
-        android:name="com.example.healthylife.Profil"
+        android:name="com.example.healthylife.ui.ProfilFragment"
         android:label="fragment_profil"
         tools:layout="@layout/fragment_profil" />
     <fragment
         android:id="@+id/kaloriNutrisi"
-        android:name="com.example.healthylife.KaloriNutrisi"
+        android:name="com.example.healthylife.ui.KaloriNutrisiFragment"
         android:label="fragment_kalori_nutrisi"
         tools:layout="@layout/fragment_kalori_nutrisi" />
     <fragment
         android:id="@+id/olahraga"
-        android:name="com.example.healthylife.olahraga"
+        android:name="com.example.healthylife.ui.OlahragaFragment"
         android:label="fragment_olahraga"
         tools:layout="@layout/fragment_olahraga" />
 </navigation>
