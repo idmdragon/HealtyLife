@@ -19,9 +19,8 @@ class OlahragaFragment : Fragment() {
 
 
         barbelworkout.setOnClickListener{
-            val intent = Intent(this@OlahragaFragment, WorkOutActivity::class.java)
+            val intent = Intent(context, WorkOutActivity::class.java)
             startActivity(intent)
-            finish()
         }
         return inflater.inflate(R.layout.fragment_olahraga, container, false)
     }

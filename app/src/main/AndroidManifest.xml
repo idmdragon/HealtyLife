@@ -12,7 +12,7 @@
         <activity android:name=".ui.PlayWorkOutActivity"></activity>
         <activity android:name=".ui.WorkOutActivity" />
         <activity android:name=".ui.splash.SplashScreen" />
-        <activity android:name=".ui.AuthActivity" />
+        <activity android:name=".ui.auth.AuthActivity" />
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

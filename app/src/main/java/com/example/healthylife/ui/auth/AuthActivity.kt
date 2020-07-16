@@ -1,4 +1,4 @@
-package com.example.healthylife.ui
+package com.example.healthylife.ui.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +9,4 @@ class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
     }
-
-
 }

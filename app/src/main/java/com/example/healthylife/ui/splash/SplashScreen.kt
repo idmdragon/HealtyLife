@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
-import com.example.healthylife.ui.AuthActivity
+import com.example.healthylife.ui.auth.AuthActivity
 import com.example.healthylife.R
 import com.example.healthylife.utils.viewobject.Resource
 
